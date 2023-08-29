@@ -404,8 +404,8 @@ static int think_lmi_set_bios_settings(const char *settings)
 	arg = kmalloc(spleng, GFP_KERNEL);
 	strcpy(arg, settings);
 	arg[num] = '/';
-	settings = arg;
 
+	strcpy(settings, arg);
 	kfree(arg);
 	return think_lmi_simple_call(LENOVO_SET_BIOS_SETTINGS_GUID, settings);
 }
